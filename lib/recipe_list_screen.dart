@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'api_getter.dart';
 import 'recipe_screen.dart';
 import 'recipe_ingredient.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 
 class RecipeListScreen extends StatelessWidget{
   const RecipeListScreen({Key? key}) : super(key: key);
@@ -13,7 +13,9 @@ class RecipeListScreen extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cocktail recipes'),
+        title: Text('Cocktail recipes',style: GoogleFonts.cookie(
+          fontSize: 40.0
+        ),),
       ),
       body: Center(
         child: FutureBuilder<List>(
@@ -56,9 +58,11 @@ class RecipeListScreen extends StatelessWidget{
                   
                   return Card(
                     child: ListTile(
-                      title: Text(recipe.name.toString()) ,
+                      title: Text(recipe.name.toString(), style: GoogleFonts.farsan(
+                        fontSize: 25.0
+                      ),) ,
                     leading:  Image(image: image,width: 40, height: 40,),
-                    subtitle: Text(recipe.category.toString()),
+                    subtitle: Text(recipe.category.toString(), style: GoogleFonts.farsan(),),
                     trailing: const Icon(Icons.arrow_forward_rounded),
                       onTap: (){
                         Navigator.push(context,MaterialPageRoute(builder: (context)=>RecipeDetailScreen(recipe,image)));},

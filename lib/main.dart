@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'recipe_list_screen.dart';
 
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
@@ -21,10 +20,13 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+  
+
     return MaterialApp(
       title: 'Recipes',
       theme: ThemeData(
         primarySwatch: Colors.orange,
+
       ),
       home: const RecipeListScreen()
     );

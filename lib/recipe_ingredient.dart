@@ -31,8 +31,7 @@ class Recipe {
   String toString() {
     // TODO: implement toString
     var buffer = StringBuffer();
-    buffer.write(name.toString());
-    buffer.write('\n' + glass.toString());
+    buffer.write('Glass: ' + glass.toString());
     if(category!="No category"){
       buffer.write('\n' + category.toString() );
     }
