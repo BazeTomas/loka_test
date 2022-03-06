@@ -35,11 +35,11 @@ class Recipe {
     if(category!="No category"){
       buffer.write('\n' + category.toString() );
     }
-    buffer.write('\n' + ingredients.toString());
+    buffer.write('\n\nIngredients:' + ingredients.toString());
     if(garnish!=null){
-      buffer.write('\n\n' + garnish.toString());
+      buffer.write('\n\nGarnish: \n' + garnish.toString());
     }
-    buffer.write('\n\n' + preparation.toString());
+    buffer.write('\n\nPreparation: \n' + preparation.toString());
     return buffer.toString().replaceAll("[", "").replaceAll(", ", "").replaceAll("]", "");
   }
 }
