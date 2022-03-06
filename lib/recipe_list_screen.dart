@@ -61,7 +61,7 @@ class RecipeListScreen extends StatelessWidget{
                     subtitle: Text(recipe.category.toString()),
                     trailing: const Icon(Icons.arrow_forward_rounded),
                       onTap: (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context)=>RecipeDetailScreen(recipe)));},
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>RecipeDetailScreen(recipe,image)));},
                     ),
                   );
                 }, );
