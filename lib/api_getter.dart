@@ -13,7 +13,6 @@ Future<List> fetchData() async {
       recipes.add(recipe);
     }
     return recipes;
-
   }
   else{
     throw Exception('Failed to load data');

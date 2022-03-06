@@ -3,6 +3,7 @@ import 'api_getter.dart';
 import 'recipe_screen.dart';
 import 'recipe_ingredient.dart';
 
+
 class RecipeListScreen extends StatelessWidget{
   const RecipeListScreen({Key? key}) : super(key: key);
 
@@ -12,7 +13,7 @@ class RecipeListScreen extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fetch Data Example'),
+        title: const Text('Cocktail recipes'),
       ),
       body: Center(
         child: FutureBuilder<List>(
@@ -28,9 +29,35 @@ class RecipeListScreen extends StatelessWidget{
 
                 return ListView.builder(itemCount: recipes.length, itemBuilder: (context,index){
                   Recipe recipe = recipes[index];
+                  AssetImage image;
+                  if(recipe.category.toString()=='Before Dinner Cocktail') {
+                     image = const AssetImage('assets/whiskey.png');
+                  }
+                  else if(recipe.category.toString()=='All Day Cocktail'){
+
+                    image = const AssetImage('assets/all_day_Cocktail.png');
+                  }
+                  else if(recipe.category.toString()=='Longdrink'){
+
+                    image = const AssetImage('assets/longdrink.png');
+                  }
+                  else if(recipe.category.toString()=='Sparkling Cocktail'){
+
+                    image = const AssetImage('assets/sparkling_Cocktail.png');
+                  }
+                  else if(recipe.category.toString()=='After Dinner Cocktail'){
+
+                    image = const AssetImage('assets/after_dinner_Cocktail.png');
+                  }
+                  else
+                    {
+                      image = const AssetImage('assets/cocktail.png');
+                    }
+                  
                   return Card(
                     child: ListTile(
                       title: Text(recipe.name.toString()) ,
+                    leading:  Image(image: image,width: 40, height: 40,),
                     subtitle: Text(recipe.category.toString()),
                     trailing: const Icon(Icons.arrow_forward_rounded),
                       onTap: (){

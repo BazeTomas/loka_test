@@ -72,7 +72,7 @@ class Ingredients {
       sb.write('\n' +
           amount.toString() + unit.toString() + " " + ingredient.toString());
       if (label != "") {
-        sb.write(' ' + label.toString());
+        sb.write(' label:' + label.toString());
       }
     }
     return sb.toString();
